@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "module": "ES2022",
+    "target": "ESnext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2023", "DOM", "DOM.AsyncIterable"],
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+  },
+
+  "include": ["src"],
+
+}

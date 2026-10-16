@@ -1,0 +1,64 @@
+/* Folha de estilo de referência do TaskFlow. A turma recebe a sua pronta. */
+:root {
+  --fundo: #f4f6fa; --cartao: #ffffff; --texto: #1f1f1f; --suave: #5b6472;
+  --azul: #0a468c; --borda: #dfe4ec;
+  --alta: #d64545; --media: #e8892c; --baixa: #2e9e5b; --amarelo: #f9c21a;
+}
+:root[data-tema="escuro"] {
+  --fundo: #11161f; --cartao: #1a2130; --texto: #e8ecf2; --suave: #9aa5b5;
+  --azul: #6fa3e8; --borda: #2a3446;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; font-family: system-ui, sans-serif; background: var(--fundo); color: var(--texto); }
+.cabecalho { display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 16px 24px; background: var(--azul); color: #fff; flex-wrap: wrap; }
+.cabecalho__titulo { margin: 0; font-size: 1.6rem; }
+.cabecalho__subtitulo { margin: 4px 0 0; opacity: .85; }
+.cabecalho__acoes { display: flex; gap: 8px; align-items: center; }
+main, .entrada { max-width: 880px; margin: 24px auto; padding: 0 16px; }
+.entrada { max-width: 420px; display: grid; gap: 12px; }
+.formulario { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; background: var(--cartao);
+  border: 1px solid var(--borda); border-radius: 10px; padding: 16px; }
+.entrada .formulario { flex-direction: column; align-items: stretch; }
+.entrada .campo { flex: none; }
+.formulario h2 { margin: 0; font-size: 1.2rem; }
+.campo { display: grid; gap: 4px; flex: 1 1 160px; }
+.campo__rotulo { font-size: .85rem; color: var(--suave); }
+.campo__entrada, .campo__selecao, .busca { padding: 8px 10px; border: 1px solid var(--borda); border-radius: 6px;
+  background: var(--cartao); color: var(--texto); font: inherit; }
+.campo__erro { color: var(--alta); min-height: 1.2em; margin: 8px 0; }
+.botao { padding: 8px 14px; border: 1px solid var(--borda); border-radius: 6px; background: var(--cartao);
+  color: var(--texto); font: inherit; cursor: pointer; }
+.botao--primario { background: var(--azul); color: #fff; border-color: var(--azul); }
+.botao--pequeno { padding: 4px 10px; font-size: .85rem; }
+.botao--sucesso { border-color: var(--baixa); color: var(--baixa); }
+.botao--perigo { border-color: var(--alta); color: var(--alta); }
+.aviso { background: #fff6d6; color: #5c4600; border-left: 4px solid var(--amarelo); padding: 10px 14px; border-radius: 6px; }
+.aviso--oculto { display: none; }
+.estatisticas { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.estatistica { background: var(--cartao); border: 1px solid var(--borda); border-radius: 10px; padding: 12px; text-align: center; }
+.estatistica__numero { display: block; font-size: 1.8rem; font-weight: 700; color: var(--azul); }
+.estatistica__rotulo { font-size: .85rem; color: var(--suave); }
+.filtros { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+.filtros__grupo { display: flex; gap: 6px; flex-wrap: wrap; }
+.filtro { padding: 6px 12px; border-radius: 999px; border: 1px solid var(--borda); background: var(--cartao); color: var(--texto); cursor: pointer; }
+.filtro--ativo { background: var(--azul); color: #fff; border-color: var(--azul); }
+.lista { list-style: none; padding: 0; display: grid; gap: 10px; }
+.tarefa { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; background: var(--cartao);
+  border: 1px solid var(--borda); border-left: 6px solid var(--media); border-radius: 10px; padding: 12px 16px; }
+.tarefa--alta { border-left-color: var(--alta); }
+.tarefa--baixa { border-left-color: var(--baixa); }
+.tarefa--concluida { opacity: .6; }
+.tarefa--concluida .tarefa__titulo { text-decoration: line-through; }
+.tarefa--atrasada { box-shadow: inset 0 0 0 2px var(--alta); }
+.tarefa__titulo { margin: 0 0 4px; font-size: 1.05rem; }
+.tarefa__descricao { margin: 0 0 6px; color: var(--suave); }
+.tarefa__meta, .tarefa__acoes { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.etiqueta, .tag { font-size: .75rem; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--borda); }
+.etiqueta--alta { color: var(--alta); } .etiqueta--media { color: var(--media); } .etiqueta--baixa { color: var(--baixa); }
+.tag { color: var(--suave); }
+.etiqueta--status { color: var(--suave); }
+.tarefa__principal { flex: 1 1 260px; min-width: 0; }
+.vazio { text-align: center; color: var(--suave); }
+@media (max-width: 600px) { .estatisticas { grid-template-columns: repeat(2, 1fr); } }

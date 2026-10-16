@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow</title>
+    <link rel="stylesheet" href="./css/taskflow.css" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div>
+        <h1 class="cabecalho__titulo"><span id="nome-do-sistema">—</span></h1>
+        <p class="cabecalho__subtitulo"><span id="versao">—</span> · <span id="data-de-hoje">—</span></p>
+      </div>
+    </header>
+    <main>
+      <ul class="estatisticas">
+        <li class="estatistica"><span class="estatistica__numero" id="total">0</span><span class="estatistica__rotulo">Total</span></li>
+        <li class="estatistica"><span class="estatistica__numero" id="pendentes">0</span><span class="estatistica__rotulo">Pendentes</span></li>
+      </ul>
+      <p class="aviso" id="comece-por" hidden></p>
+      <ul class="lista" id="lista"></ul>
+    </main>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
